@@ -44,6 +44,17 @@ router.put('/:idElemento', (req, res, next)=>{
 
 
 
+router.delete('/:id', (req, res, next)=>{
+    var id = parseInt(req.params.id);
+    thingsCollection = thingsCollection.filter((e, i)=>{
+        return (e.id !== id);
+    }); 
+
+    res.status(200).json({'msg': 'Galeria ' + id + ' fue eliminada con éxito.'});
+}); // DELETE
+
+
+
 
 
 
